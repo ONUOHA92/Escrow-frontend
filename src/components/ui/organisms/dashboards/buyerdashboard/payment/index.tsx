@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import BuyersLayout from '@/components/ui/layouts/buyerdashboardlayout';
-import PayButton from './payButton';
+
 
 
 
@@ -16,7 +16,7 @@ const BuyerPayment = () => {
         <>
             <BuyersLayout>
                 <h1>Simple Pay Page</h1>
-                <PayButton amount={amount} email={email} />
+
             </BuyersLayout>
 
         </>
