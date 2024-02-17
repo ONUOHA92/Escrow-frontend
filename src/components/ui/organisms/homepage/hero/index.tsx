@@ -32,7 +32,7 @@ const Hero = () => {
                                 Escrow platfom for both buyer and seller
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-600">
-                                At SafeTrade, we provide a secure and reliable escrow service for your transactions, ensuring peace of mind for both buyers and sellers. Whether you're conducting business online or in person, our platform offers a trusted intermediary to facilitate your transactions safely and efficiently.
+                                At SafeTrade, we provide a secure and reliable escrow service for your transactions, ensuring peace of mind for both buyers and sellers. Whether You&lsquo;re conducting business online or in person, our platform offers a trusted intermediary to facilitate your transactions safely and efficiently.
 
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
