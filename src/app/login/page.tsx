@@ -1,17 +1,9 @@
-import LoginTemplate from '@/components/template/Loginpage';
-import Layout from '@/components/ui/layouts';
-import React from 'react';
-
-
+import LoginTemplate from "@/components/template/Loginpage";
+import Layout from "@/components/ui/layouts";
+import React from "react";
 
 const Login = () => {
-    return (
-
-        <LoginTemplate />
-
-
-
-    );
+  return <LoginTemplate />;
 };
 
 export default Login;

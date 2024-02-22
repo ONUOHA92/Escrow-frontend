@@ -1,12 +1,8 @@
-import PaymentTemplate from '@/components/template/BuyerDashboard/PaymentTemplate';
-import React from 'react';
-
-
+import PaymentTemplate from "@/components/template/BuyerDashboard/PaymentTemplate";
+import React from "react";
 
 const Payments = () => {
-    return (
-        <PaymentTemplate />
-    );
+  return <PaymentTemplate />;
 };
 
 export default Payments;

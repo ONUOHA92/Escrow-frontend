@@ -1,14 +1,8 @@
-import React from 'react';
-import BuyerHomeTemplate from '@/components/template/BuyerDashboard/buyerHome';
-
-
-
-
+import React from "react";
+import BuyerHomeTemplate from "@/components/template/BuyerDashboard/buyerHome";
 
 const Dashboard = () => {
-    return (
-        <BuyerHomeTemplate />
-    );
+  return <BuyerHomeTemplate />;
 };
 
 export default Dashboard;
