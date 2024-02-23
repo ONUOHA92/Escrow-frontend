@@ -18,30 +18,33 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
+import Link from "next/link";
 
-const navigation = [
-  {
-    name: "Dashboard",
-    href: "/buyer/dashboard",
-    icon: HomeIcon,
-    current: true,
-  },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  {
-    name: "Payment",
-    href: "/buyer/payments",
-    icon: FolderIcon,
-    current: false,
-  },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
-];
-const teams = [
-  { id: 1, name: "Heroicons", href: "#", initial: "H", current: false },
-  { id: 2, name: "Tailwind Labs", href: "#", initial: "T", current: false },
-  { id: 3, name: "Workcation", href: "#", initial: "W", current: false },
-];
+// const navigation = [
+//   {
+//     name: "Dashboard",
+//     href: "/buyer/dashboard",
+//     icon: HomeIcon,
+//     current: true,
+//   },
+//   { name: "Team", href: "#", icon: UsersIcon, current: false },
+//   {
+//     name: "Payment",
+//     href: "/buyer/payments",
+//     icon: FolderIcon,
+//     current: false,
+//   },
+//   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+//   { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
+//   { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+//   {
+//     name: "Settings",
+//     href: "/buyer/profile",
+//     icon: Cog6ToothIcon,
+//     current: false,
+//   },
+// ];
+
 const userNavigation = [
   { name: "Your profile", href: "#" },
   { name: "Sign out", href: "#" },
@@ -53,6 +56,45 @@ function classNames(...classes: string[]) {
 
 export default function BuyersLayout({ children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  //   const [activeTab, setActiveTab] = useState("Dashboard");
+
+  const [navigation, setNavigation] = useState([
+    {
+      name: "Dashboard",
+      href: "/buyer/dashboard",
+      icon: HomeIcon,
+      current: false,
+    },
+    { name: "Team", href: "#", icon: UsersIcon, current: false },
+    {
+      name: "Payment",
+      href: "/buyer/payments",
+      icon: FolderIcon,
+      current: false,
+    },
+    { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+    {
+      name: "Documents",
+      href: "/buyer/uploadPayment",
+      icon: DocumentDuplicateIcon,
+      current: false,
+    },
+    { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+    {
+      name: "Settings",
+      href: "/buyer/profile",
+      icon: Cog6ToothIcon,
+      current: false,
+    },
+  ]);
+
+  const handleNavigationClick = (index: any) => {
+    const updatedNavigation = navigation.map((item, i) => ({
+      ...item,
+      current: i === index,
+    }));
+    setNavigation(updatedNavigation);
+  };
 
   return (
     <>
@@ -126,11 +168,58 @@ export default function BuyersLayout({ children }: any) {
                         alt="Your Company"
                       />
                     </div>
-                    <nav className="flex flex-1 flex-col">
+
+                    {/* <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
                         <li>
                           <ul role="list" className="-mx-2 space-y-1">
                             {navigation.map((item) => (
+                              <li key={item.name}>
+                                <a
+                                  href={item.href}
+                                  className={classNames(
+                                    activeTab === item.name
+                                      ? "bg-gray-50 text-purple-900"
+                                      : "text-gray-700 hover:text-purple-600 hover:bg-gray-50",
+                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
+                                  )}
+                                  onClick={() => handleTabClick(item.name)} // Call handleTabClick function on tab click
+                                >
+                                  <item.icon
+                                    className={classNames(
+                                      activeTab === item.name
+                                        ? "text-purple-900"
+                                        : "text-gray-400 group-hover:text-purple-600",
+                                      "h-6 w-6 shrink-0"
+                                    )}
+                                    aria-hidden="true"
+                                  />
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </li>
+
+                        <li className="mt-auto">
+                          <a
+                            href="/login"
+                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                          >
+                            <ArrowLongLeftIcon
+                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-purple-600"
+                              aria-hidden="true"
+                            />
+                            logout
+                          </a>
+                        </li>
+                      </ul>
+                    </nav> */}
+                    <nav className="flex flex-1 flex-col">
+                      <ul role="list" className="flex flex-1 flex-col gap-y-7">
+                        <li>
+                          <ul role="list" className="-mx-2 space-y-1">
+                            {/* {navigation.map((item) => (
                               <li key={item.name}>
                                 <a
                                   href={item.href}
@@ -153,41 +242,34 @@ export default function BuyersLayout({ children }: any) {
                                   {item.name}
                                 </a>
                               </li>
-                            ))}
-                          </ul>
-                        </li>
-                        <li>
-                          <div className="text-xs font-semibold leading-6 text-gray-400">
-                            Your teams
-                          </div>
-                          <ul role="list" className="-mx-2 mt-2 space-y-1">
-                            {teams.map((team) => (
-                              <li key={team.name}>
-                                <a
-                                  href={team.href}
-                                  className={classNames(
-                                    team.current
+                            ))} */}
+
+                            {navigation.map((item, index) => (
+                              <li key={index}>
+                                <Link
+                                  href={item.href}
+                                  onClick={() => handleNavigationClick(index)}
+                                  className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
+                                    item.current
                                       ? "bg-gray-50 text-purple-900"
-                                      : "text-gray-700 hover:text-purple-600 hover:bg-gray-50",
-                                    "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                                  )}
+                                      : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+                                  }`}
                                 >
-                                  <span
-                                    className={classNames(
-                                      team.current
-                                        ? "text-purple-600 border-purple-600"
-                                        : "text-gray-400 border-gray-200 group-hover:border-purple-600 group-hover:text-purple-600",
-                                      "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white"
-                                    )}
-                                  >
-                                    {team.initial}
-                                  </span>
-                                  <span className="truncate">{team.name}</span>
-                                </a>
+                                  <item.icon
+                                    className={`h-6 w-6 shrink-0 ${
+                                      item.current
+                                        ? "text-purple-900"
+                                        : "text-gray-400 group-hover:text-purple-600"
+                                    }`}
+                                    aria-hidden="true"
+                                  />
+                                  {item.name}
+                                </Link>
                               </li>
                             ))}
                           </ul>
                         </li>
+
                         <li className="mt-auto">
                           <a
                             href="/login"
@@ -198,18 +280,6 @@ export default function BuyersLayout({ children }: any) {
                               aria-hidden="true"
                             />
                             logout
-                          </a>
-                        </li>
-                        <li className="mt-auto">
-                          <a
-                            href="#"
-                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                          >
-                            <Cog6ToothIcon
-                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-purple-600"
-                              aria-hidden="true"
-                            />
-                            Settings
                           </a>
                         </li>
                       </ul>
@@ -236,7 +306,7 @@ export default function BuyersLayout({ children }: any) {
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
                   <ul role="list" className="-mx-2 space-y-1">
-                    {navigation.map((item) => (
+                    {/* {navigation.map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
@@ -259,41 +329,34 @@ export default function BuyersLayout({ children }: any) {
                           {item.name}
                         </a>
                       </li>
-                    ))}
-                  </ul>
-                </li>
-                <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">
-                    Your teams
-                  </div>
-                  <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <a
-                          href={team.href}
-                          className={classNames(
-                            team.current
-                              ? "bg-gray-50 text-indigo-600"
-                              : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
-                            "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
-                          )}
+                    ))} */}
+
+                    {navigation.map((item, index) => (
+                      <li key={index}>
+                        <Link
+                          href={item.href}
+                          onClick={() => handleNavigationClick(index)}
+                          className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
+                            item.current
+                              ? "bg-gray-50 text-purple-900"
+                              : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+                          }`}
                         >
-                          <span
-                            className={classNames(
-                              team.current
-                                ? "text-indigo-600 border-indigo-600"
-                                : "text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600",
-                              "flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white"
-                            )}
-                          >
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
-                        </a>
+                          <item.icon
+                            className={`h-6 w-6 shrink-0 ${
+                              item.current
+                                ? "text-purple-900"
+                                : "text-gray-400 group-hover:text-purple-600"
+                            }`}
+                            aria-hidden="true"
+                          />
+                          {item.name}
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </li>
+
                 <li className="mt-auto">
                   <a
                     href="/login"
@@ -304,18 +367,6 @@ export default function BuyersLayout({ children }: any) {
                       aria-hidden="true"
                     />
                     Logout
-                  </a>
-                </li>
-                <li className="mt-auto">
-                  <a
-                    href="/buyer/profile"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
-                  >
-                    <Cog6ToothIcon
-                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
-                      aria-hidden="true"
-                    />
-                    Settings
                   </a>
                 </li>
               </ul>
