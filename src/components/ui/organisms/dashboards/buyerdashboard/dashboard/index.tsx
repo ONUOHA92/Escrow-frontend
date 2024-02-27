@@ -115,7 +115,7 @@ const Dashboard = () => {
   const endIndex = Math.min(startIndex + itemsPerPage, people.length);
 
   // Function to handle page change
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: any) => {
     setCurrentPage(pageNumber);
   };
 
