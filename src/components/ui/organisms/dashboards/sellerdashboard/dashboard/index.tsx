@@ -1,7 +1,12 @@
 "use client";
-
 import React, { useState } from "react";
-import BuyersLayout from "@/components/ui/layouts/buyerdashboardlayout";
+import SellerLayout from "@/components/ui/layouts/sellerlayout";
+
+const stats = [
+  { name: "Revenue", stat: "₦120,000" },
+  { name: "Withdraw", stat: "₦58,000" },
+  { name: "Balance ", stat: "₦30,000" },
+];
 
 const people = [
   {
@@ -98,13 +103,7 @@ const people = [
 
 const itemsPerPage = 5; // Number of items per page
 
-const stats = [
-  { name: "Daily", stat: "10" },
-  { name: "Weekly", stat: "30" },
-  { name: "Monthly", stat: "200" },
-];
-
-const Dashboard = () => {
+const SellerDashboardTemplate = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Calculate total number of pages
@@ -120,21 +119,21 @@ const Dashboard = () => {
   };
 
   return (
-    <BuyersLayout>
+    <SellerLayout>
       <div>
         <h3 className="text-base font-semibold leading-6 text-gray-900">
-          Transaction made in Last 30 days
+          We Charge 1.5% on ever withdrawal
         </h3>
-        <dl className="mt-5 grid  grid-cols-1  lg:text-center  gap-5 sm:grid-cols-3">
+        <dl className="mt-5 grid grid-cols-1 lg:text-center gap-5 sm:grid-cols-3">
           {stats.map((item) => (
             <div
               key={item.name}
-              className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow  sm:p-6"
+              className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
             >
               <dt className="truncate text-sm font-medium text-gray-500">
                 {item.name}
               </dt>
-              <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-700">
+              <dd className="mt-1 text-3xl font-semibold tracking-tight text-gray-900">
                 {item.stat}
               </dd>
             </div>
@@ -268,8 +267,8 @@ const Dashboard = () => {
           </nav>
         </div>
       </div>
-    </BuyersLayout>
+    </SellerLayout>
   );
 };
 
-export default Dashboard;
+export default SellerDashboardTemplate;
