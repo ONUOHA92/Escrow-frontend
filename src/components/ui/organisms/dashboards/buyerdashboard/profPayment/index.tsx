@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import BuyersLayout from "@/components/ui/layouts/buyerdashboardlayout";
 
 const ProfOfPayment = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
-  const handleFileChange = (event: any) => {
-    setSelectedFile(event.target.files[0]);
-    // Do something with the selected file, like upload it
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedFile(event.target.files[0]);
+    }
   };
 
   const handleSubmit = () => {
@@ -45,6 +46,15 @@ const ProfOfPayment = () => {
             </span>
             <input type="file" className="hidden" onChange={handleFileChange} />
           </label>
+
+          {/* Display selected file */}
+          {selectedFile && (
+            <div className="mt-4">
+              <p className="text-sm text-gray-600">
+                Selected file: {selectedFile.name}
+              </p>
+            </div>
+          )}
 
           <button
             type="button"
