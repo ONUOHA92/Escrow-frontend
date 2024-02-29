@@ -103,7 +103,7 @@ const people = [
 
 const itemsPerPage = 5; // Number of items per page
 
-const SellerDashboardTemplate = () => {
+const SellerDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Calculate total number of pages
@@ -271,4 +271,4 @@ const SellerDashboardTemplate = () => {
   );
 };
 
-export default SellerDashboardTemplate;
+export default SellerDashboard;

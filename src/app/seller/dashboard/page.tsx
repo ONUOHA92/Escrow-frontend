@@ -1,8 +1,9 @@
+import SellerHomeTemplate from "@/components/template/SellerDashboard/sellerHome";
 import React from "react";
-import SellerDashboardTemplate from "@/components/ui/organisms/dashboards/sellerdashboard/dashboard";
+SellerHomeTemplate;
 
 const Dashboard = () => {
-  return <SellerDashboardTemplate />;
+  return <SellerHomeTemplate />;
 };
 
 export default Dashboard;

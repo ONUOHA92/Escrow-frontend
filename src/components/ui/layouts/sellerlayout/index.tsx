@@ -49,8 +49,8 @@ export default function SellerLayout({ children }: any) {
     },
     { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
     {
-      name: "Documents",
-      href: "/seller/uploadPayment",
+      name: "Product Upload",
+      href: "/seller/product",
       icon: DocumentDuplicateIcon,
       current: false,
     },
