@@ -41,7 +41,7 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <div>
+            <div key={item.name}>
               {item.name === "Support" ? (
                 <div className="relative">
                   <button
@@ -155,7 +155,7 @@ export default function Navbar() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <div>
+                  <div key={item.name}>
                     {item.name === "Support" ? (
                       <div className="relative">
                         <button
