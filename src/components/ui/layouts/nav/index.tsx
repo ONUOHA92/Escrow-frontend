@@ -155,13 +155,57 @@ export default function Navbar() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
+                  <div>
+                    {item.name === "Support" ? (
+                      <div className="relative">
+                        <button
+                          key={item.name}
+                          onClick={handleDropdownToggle}
+                          className="font-medium text-gray-700 hover:text-gray-900 focus:outline-none flex items-center"
+                        >
+                          <span>{item.name}</span>
+                          <svg
+                            className="-mr-1 h-5 w-5 text-gray-400"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </button>
+                        {showDropdown && (
+                          <div className="absolute right-0 left-1 mt-2 w-48 bg-white border rounded-lg shadow-lg">
+                            <a
+                              href="#"
+                              onClick={closeDropdown}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                              Dispute Resolution
+                            </a>
+                            <a
+                              href="#"
+                              onClick={closeDropdown}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            >
+                              Contact Us
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="text-sm font-semibold leading-6 text-gray-900"
+                      >
+                        {item.name}
+                      </a>
+                    )}
+                  </div>
                 ))}
               </div>
               <div className="py-6">
