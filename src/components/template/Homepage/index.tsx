@@ -10,9 +10,7 @@ const HomePageTemplate = () => {
   return (
     <main>
       <Hero />
-      {/* <SupportLogo /> */}
       <Feature />
-      {/* <ListOfServices /> */}
       <FrequncyQuestion />
       <Testimonials />
     </main>
