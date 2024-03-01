@@ -60,7 +60,7 @@ const Hero = () => {
             <div className="mt-16 flow-root sm:mt-24">
               <div className="-m-2 rounded-xl p-2  ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <img
-                  src="/assets/images/payment.png"
+                  src="/assets/images/dashboard1.png"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
