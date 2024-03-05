@@ -32,7 +32,7 @@ const KnowMore = () => {
           <div className="lg:grid lg:grid-cols-12 lg:gap-8">
             <div className="lg:col-span-5">
               <h2 className="text-3xl w-[350px] font-bold leading-10 tracking-tight text-purple-700">
-                "Safeguarding Transactions with Clear and Affordable Fees"
+                Safeguarding Transactions with Clear and Affordable Fees
               </h2>
             </div>
             <div className="mt-10 lg:col-span-7 lg:mt-0">
