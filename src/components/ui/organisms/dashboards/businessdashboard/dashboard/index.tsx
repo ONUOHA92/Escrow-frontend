@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import SellerLayout from "@/components/ui/layouts/sellerlayout";
 
 const stats = [
   { name: "Amount in Escrow", stat: "₦120,000" },
@@ -104,7 +103,7 @@ const people = [
 
 const itemsPerPage = 5; // Number of items per page
 
-const SellerDashboard = () => {
+const BusinessDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   // Calculate total number of pages
@@ -120,7 +119,7 @@ const SellerDashboard = () => {
   };
 
   return (
-    <SellerLayout>
+    <>
       <div>
         <h3 className="text-base font-semibold leading-6 text-gray-900">
           We Charge 1.5% on ever withdrawal
@@ -260,8 +259,8 @@ const SellerDashboard = () => {
           </nav>
         </div>
       </div>
-    </SellerLayout>
+    </>
   );
 };
 
-export default SellerDashboard;
+export default BusinessDashboard;

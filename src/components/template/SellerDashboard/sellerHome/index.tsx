@@ -1,8 +1,8 @@
 import React from "react";
-import SellerDashboard from "@/components/ui/organisms/dashboards/sellerdashboard/dashboard";
+import BusinessDashboard from "@/components/ui/organisms/dashboards/businessdashboard/dashboard";
 
-const SellerHomeTemplate = () => {
-  return <SellerDashboard />;
+const BusinessHomeTemplate = () => {
+  return <BusinessDashboard />;
 };
 
-export default SellerHomeTemplate;
+export default BusinessHomeTemplate;

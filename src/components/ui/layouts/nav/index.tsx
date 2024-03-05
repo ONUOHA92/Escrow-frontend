@@ -7,7 +7,7 @@ const navigation = [
   { name: "Why Safetrade", href: "#" },
   { name: "Product", href: "#" },
   { name: "Support", href: "#" },
-  { name: "Pricing", href: "#" },
+  { name: "Pricing", href: "/pricing" },
   { name: "Market place", href: "#" },
 ];
 
@@ -73,7 +73,7 @@ export default function Navbar() {
                         Dispute Resolution
                       </a>
                       <a
-                        href="#"
+                        href="/contact"
                         onClick={closeDropdown}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       >

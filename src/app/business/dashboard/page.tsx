@@ -1,9 +1,13 @@
-import SellerHomeTemplate from "@/components/template/SellerDashboard/sellerHome";
 import React from "react";
-SellerHomeTemplate;
+import BusinessHomeTemplate from "@/components/template/SellerDashboard/sellerHome";
+import BusinessLayout from "@/components/ui/layouts/businesslayout";
 
 const Dashboard = () => {
-  return <SellerHomeTemplate />;
+  return (
+    <BusinessLayout>
+      <BusinessHomeTemplate />;
+    </BusinessLayout>
+  );
 };
 
 export default Dashboard;

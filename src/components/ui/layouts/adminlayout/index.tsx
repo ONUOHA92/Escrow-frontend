@@ -20,6 +20,31 @@ import {
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
 
+// const navigation = [
+//   {
+//     name: "Dashboard",
+//     href: "/buyer/dashboard",
+//     icon: HomeIcon,
+//     current: true,
+//   },
+//   { name: "Team", href: "#", icon: UsersIcon, current: false },
+//   {
+//     name: "Payment",
+//     href: "/buyer/payments",
+//     icon: FolderIcon,
+//     current: false,
+//   },
+//   { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+//   { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
+//   { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+//   {
+//     name: "Settings",
+//     href: "/buyer/profile",
+//     icon: Cog6ToothIcon,
+//     current: false,
+//   },
+// ];
+
 const userNavigation = [
   { name: "Your profile", href: "#" },
   { name: "Sign out", href: "#" },
@@ -29,35 +54,35 @@ function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SellerLayout({ children }: any) {
+export default function AdminLayout({ children }: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   //   const [activeTab, setActiveTab] = useState("Dashboard");
 
   const [navigation, setNavigation] = useState([
     {
       name: "Dashboard",
-      href: "/seller/dashboard",
+      href: "/admin/dashboard",
       icon: HomeIcon,
       current: false,
     },
-    { name: "Team", href: "#", icon: UsersIcon, current: false },
+
     {
-      name: "Payment",
-      href: "/seller/payments",
+      name: "Transaction",
+      href: "/admin/transaction",
       icon: FolderIcon,
       current: false,
     },
-    { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
+    { name: "Users", href: "#", icon: CalendarIcon, current: false },
     {
-      name: "Product Upload",
-      href: "/seller/product",
+      name: "Admins",
+      href: "/buyer/uploadPayment",
       icon: DocumentDuplicateIcon,
       current: false,
     },
-    { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
+
     {
       name: "Settings",
-      href: "/seller/profile",
+      href: "/buyer/profile",
       icon: Cog6ToothIcon,
       current: false,
     },
@@ -73,6 +98,14 @@ export default function SellerLayout({ children }: any) {
 
   return (
     <>
+      {/*
+        This example requires updating your template:
+
+        ```
+        <html class="h-full bg-white">
+        <body class="h-full">
+        ```
+      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
