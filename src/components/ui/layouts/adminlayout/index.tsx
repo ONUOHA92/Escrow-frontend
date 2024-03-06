@@ -162,11 +162,12 @@ export default function AdminLayout({ children }: any) {
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
-                      />
+                      <div className="flex lg:flex-1">
+                        <a href="#" className="-m-1.5 font-bold text-3xl p-1.5">
+                          Escrow
+                          <span className="text-purple-700">Pro</span>
+                        </a>
+                      </div>
                     </div>
 
                     <nav className="flex flex-1 flex-col">
@@ -225,11 +226,12 @@ export default function AdminLayout({ children }: any) {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="Your Company"
-              />
+              <div className="flex lg:flex-1">
+                <a href="#" className="-m-1.5 font-bold text-3xl p-1.5">
+                  Escrow
+                  <span className="text-purple-700">Pro</span>
+                </a>
+              </div>
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
