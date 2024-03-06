@@ -241,11 +241,9 @@ const AdminHome = () => {
                           {transaction.email}
                         </td>
                         <td
-                          className={`whitespace-nowrap px-3 py-4 text-sm text-gray-500 ${
+                          className={`whitespace-nowrap px-3 py-4 text-sm  ${
                             transaction.satus === "Pending"
                               ? "text-yellow-400 "
-                              : transaction.satus === "Completed"
-                              ? " text-blue-400"
                               : transaction.satus === "Ongoing"
                               ? "text-green-400"
                               : transaction.satus === "Disputed"
@@ -254,6 +252,8 @@ const AdminHome = () => {
                               ? "text-orange-400"
                               : transaction.satus === "Cancelled"
                               ? "text-red-400"
+                              : transaction.satus === "Completed"
+                              ? "text-blue-400"
                               : ""
                           }`}
                         >
