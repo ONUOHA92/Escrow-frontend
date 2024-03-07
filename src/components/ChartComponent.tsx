@@ -70,7 +70,7 @@ const ChartComponent: React.FC = () => {
       <canvas
         ref={canvasRef}
         id="activeUsersChart"
-        style={{ maxWidth: "500px", maxHeight: "300px" }}
+        // style={{ maxWidth: "500px", maxHeight: "300px" }}
       />
     </div>
   );
