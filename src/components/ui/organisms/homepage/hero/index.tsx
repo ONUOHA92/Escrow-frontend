@@ -36,7 +36,7 @@ const Hero = () => {
                 <span className="text-green-600 animate-pulse">seller</span>
               </h1>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                At SafeTrade, we provide a secure and reliable escrow service
+                At EscrowPro, we provide a secure and reliable escrow service
                 for your transactions, ensuring peace of mind for both buyers
                 and sellers. Whether You&lsquo;re conducting business online or
                 in person, our platform offers a trusted intermediary to
@@ -60,7 +60,7 @@ const Hero = () => {
             <div className="mt-16 flow-root sm:mt-24">
               <div className="-m-2 rounded-xl p-2  ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <img
-                  src="/assets/images/dashboard1.png"
+                  src="/assets/images/dashboard.png"
                   alt="App screenshot"
                   width={2432}
                   height={1442}
