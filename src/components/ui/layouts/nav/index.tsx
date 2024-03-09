@@ -30,7 +30,7 @@ export default function Navbar() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 font-bold text-3xl p-1.5">
+          <a href="/" className="-m-1.5 font-bold text-3xl p-1.5">
             Escrow
             <span className="text-purple-700">Pro</span>
             {/* <img
@@ -67,7 +67,7 @@ export default function Navbar() {
                   {showDropdown && (
                     <div className="absolute right-0 left-1 mt-2 w-48 bg-white border rounded-lg shadow-lg">
                       <a
-                        href="#"
+                        href="/dispute"
                         onClick={closeDropdown}
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       >
@@ -181,14 +181,14 @@ export default function Navbar() {
                         {showDropdown && (
                           <div className="absolute right-0 left-1 mt-2 w-48 bg-white border rounded-lg shadow-lg">
                             <a
-                              href="#"
+                              href="/dispute"
                               onClick={closeDropdown}
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             >
                               Dispute Resolution
                             </a>
                             <a
-                              href="#"
+                              href="/contact"
                               onClick={closeDropdown}
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             >

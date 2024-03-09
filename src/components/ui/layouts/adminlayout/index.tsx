@@ -72,7 +72,7 @@ export default function AdminLayout({ children }: any) {
       icon: FolderIcon,
       current: false,
     },
-    { name: "Users", href: "#", icon: CalendarIcon, current: false },
+    { name: "Users", href: "/admin/users", icon: UsersIcon, current: false },
     {
       name: "Admins",
       href: "/buyer/uploadPayment",
