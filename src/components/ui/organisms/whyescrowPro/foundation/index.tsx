@@ -1,10 +1,10 @@
 import React from "react";
 
 const stats = [
-  { label: "Founded", value: "2021" },
-  { label: "Employees", value: "37" },
-  { label: "Countries", value: "12" },
-  { label: "Raised", value: "$25M" },
+  { label: "Founded", value: "2024" },
+  { label: "Employees", value: "3" },
+  { label: "Countries", value: "1" },
+  { label: "Raised", value: "1M" },
 ];
 
 const Foundation = () => {
@@ -46,11 +46,7 @@ const Foundation = () => {
                     />
                     <use href="#0ef284b8-28c2-426e-9442-8655d393522e" x={86} />
                   </svg>
-                  <img
-                    src="https://tailwindui.com/img/logos/workcation-logo-white.svg"
-                    alt=""
-                    className="h-12 w-auto"
-                  />
+
                   <blockquote className="mt-6 text-xl font-semibold leading-8 text-white">
                     <p>
                       “Amet amet eget scelerisque tellus sit neque faucibus non
@@ -60,9 +56,9 @@ const Foundation = () => {
                   </blockquote>
                   <figcaption className="mt-6 text-sm leading-6 text-gray-300">
                     <strong className="font-semibold text-white">
-                      Judith Rogers,
+                      Onuoha Collins,
                     </strong>{" "}
-                    CEO at Workcation
+                    CEO at EscrowPro
                   </figcaption>
                 </figure>
               </div>
@@ -112,7 +108,7 @@ const Foundation = () => {
                   </div>
                 ))}
               </dl>
-              <div className="mt-10 flex">
+              {/* <div className="mt-10 flex">
                 <a
                   href="#"
                   className="text-base font-semibold leading-7 text-indigo-600"
@@ -120,7 +116,7 @@ const Foundation = () => {
                   Learn more about our company{" "}
                   <span aria-hidden="true">&rarr;</span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
