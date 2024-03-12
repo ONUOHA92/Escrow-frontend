@@ -1,6 +1,6 @@
 import React from "react";
 
-const people = [
+const teams = [
   {
     name: "Onuoha Collins",
     role: "Co-Founder / CEO",
@@ -47,7 +47,7 @@ const AboutOurTeam = () => {
             role="list"
             className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3"
           >
-            {people.map((person) => (
+            {teams.map((person) => (
               <li
                 key={person.name}
                 className="flex flex-col gap-10 pt-12 sm:flex-row"
