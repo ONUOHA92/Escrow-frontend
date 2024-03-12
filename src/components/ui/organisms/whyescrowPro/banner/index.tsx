@@ -66,40 +66,8 @@ const team = [
   },
   // More people...
 ];
-const benefits = [
-  "Competitive salaries",
-  "Flexible work hours",
-  "30 days of paid vacation",
-  "Annual team retreats",
-  "Benefits for you and your family",
-  "A great work environment",
-];
-const footerNavigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
-  ],
-  support: [
-    { name: "Pricing", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-    { name: "API Status", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Partners", href: "#" },
-  ],
-  legal: [
-    { name: "Claim", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-  ],
-};
+
+
 
 const BannerSection = () => {
   return (
@@ -153,7 +121,7 @@ const BannerSection = () => {
               </p>
             </div>
           </div>
-          <dl className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mt-28 lg:grid-cols-4">
+          {/* <dl className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mt-28 lg:grid-cols-4">
             {stats.map((stat, statIdx) => (
               <div
                 key={statIdx}
@@ -167,7 +135,7 @@ const BannerSection = () => {
                 </dd>
               </div>
             ))}
-          </dl>
+          </dl> */}
         </div>
       </div>
     </div>
