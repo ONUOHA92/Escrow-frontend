@@ -4,7 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Why Safetrade", href: "#" },
+  { name: "Why EscrowPro", href: "aboutus" },
   { name: "Product", href: "#" },
   { name: "Support", href: "#" },
   { name: "Pricing", href: "/pricing" },

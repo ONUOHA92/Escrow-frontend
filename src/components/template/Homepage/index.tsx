@@ -5,12 +5,15 @@ import Feature from "@/components/ui/organisms/homepage/feature";
 import FrequncyQuestion from "@/components/ui/organisms/homepage/faq";
 import Testimonials from "@/components/ui/organisms/homepage/Testimonials";
 import ListOfServices from "@/components/ui/organisms/homepage/listServices";
+import { motion } from "framer-motion";
 
 const HomePageTemplate = () => {
   return (
     <main>
       <Hero />
+
       <Feature />
+
       <FrequncyQuestion />
       <Testimonials />
     </main>
