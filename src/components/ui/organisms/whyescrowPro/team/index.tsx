@@ -19,7 +19,7 @@ const teams = [
   },
   {
     name: "Willans Alexander",
-    role: "Team Lead Developer",
+    role: "Team Lead",
     imageUrl: "../../assets/team/teamLead.jpeg",
     bio: "Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.",
     xUrl: "#",
