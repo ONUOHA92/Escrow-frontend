@@ -12,7 +12,8 @@ const Banner = () => {
 
   const calculateFee = () => {
     const fee = purchasePrice * 0.02; // 1.5% as a decimal
-    setEscrowFee(parseFloat(fee.toFixed(2))); // Format fee to two decimal places
+    const totalFee = fee + 100; // Add fixed ₦100
+    setEscrowFee(parseFloat(totalFee.toFixed(2))); // Format fee to two decimal places
   };
   return (
     <div className="bg-purple-300">
@@ -23,7 +24,7 @@ const Banner = () => {
         <p className="mt-5">
           {" "}
           Enter your goods purchase price to calculate your escrow fee which is
-          2%.
+          2%. plus ₦100 is charge for processing
         </p>
 
         <div className="flex mt-5">
