@@ -19,6 +19,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
 import Link from "next/link";
+import AccordionItem from "../../atoms/AccordionItem";
 
 const userNavigation = [
   { name: "Your profile", href: "#" },
@@ -144,60 +145,66 @@ export default function BusinessLayout({ children }: any) {
                             {navigation.map((item, index) => (
                               <li key={index}>
                                 {item.name === "Deal" ? (
-                                  <div className="group inline-block">
-                                    <button
-                                      className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
-                                        item.current
-                                          ? "bg-gray-50 text-purple-900"
-                                          : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
-                                      }`}
-                                    >
-                                      <item.icon
-                                        className={`h-6 w-6 shrink-0 ${
-                                          item.current
-                                            ? "text-purple-900"
-                                            : "text-gray-400 group-hover:text-purple-600"
-                                        }`}
-                                        aria-hidden="true"
-                                      />
-                                      {item.name}
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 ml-1"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M19 9l-7 7-7-7"
-                                        />
-                                      </svg>
-                                    </button>
-                                    <div className="absolute z-10 hidden group-hover:block bg-white py-2 mt-1 rounded-md shadow-lg">
-                                      <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                      >
-                                        Dropdown Item 1
-                                      </Link>
-                                      <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                      >
-                                        Dropdown Item 2
-                                      </Link>
-                                      <Link
-                                        href="#"
-                                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                      >
-                                        Dropdown Item 3
-                                      </Link>
-                                    </div>
-                                  </div>
+                                  <AccordionItem
+                                    item={item}
+                                    handleNavigationClick={() =>
+                                      handleNavigationClick(index)
+                                    }
+                                  />
                                 ) : (
+                                  // <div className="group inline-block">
+                                  //   <button
+                                  //     className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
+                                  //       item.current
+                                  //         ? "bg-gray-50 text-purple-900"
+                                  //         : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+                                  //     }`}
+                                  //   >
+                                  //     <item.icon
+                                  //       className={`h-6 w-6 shrink-0 ${
+                                  //         item.current
+                                  //           ? "text-purple-900"
+                                  //           : "text-gray-400 group-hover:text-purple-600"
+                                  //       }`}
+                                  //       aria-hidden="true"
+                                  //     />
+                                  //     {item.name}
+                                  //     <svg
+                                  //       xmlns="http://www.w3.org/2000/svg"
+                                  //       className="h-6 w-6 ml-1"
+                                  //       fill="none"
+                                  //       viewBox="0 0 24 24"
+                                  //       stroke="currentColor"
+                                  //     >
+                                  //       <path
+                                  //         strokeLinecap="round"
+                                  //         strokeLinejoin="round"
+                                  //         strokeWidth={2}
+                                  //         d="M19 9l-7 7-7-7"
+                                  //       />
+                                  //     </svg>
+                                  //   </button>
+                                  //   <div className="absolute z-10 hidden group-hover:block bg-white py-2 mt-1 rounded-md shadow-lg">
+                                  //     <Link
+                                  //       href="#"
+                                  //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                  //     >
+                                  //       Dropdown Item 1
+                                  //     </Link>
+                                  //     <Link
+                                  //       href="#"
+                                  //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                  //     >
+                                  //       Dropdown Item 2
+                                  //     </Link>
+                                  //     <Link
+                                  //       href="#"
+                                  //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                  //     >
+                                  //       Dropdown Item 3
+                                  //     </Link>
+                                  //   </div>
+                                  // </div>
                                   <Link
                                     href={item.href}
                                     onClick={() => handleNavigationClick(index)}
@@ -263,60 +270,66 @@ export default function BusinessLayout({ children }: any) {
                     {navigation.map((item, index) => (
                       <li key={index}>
                         {item.name === "Deal" ? (
-                          <div className="group inline-block">
-                            <button
-                              className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
-                                item.current
-                                  ? "bg-gray-50 text-purple-900"
-                                  : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
-                              }`}
-                            >
-                              <item.icon
-                                className={`h-6 w-6 shrink-0 ${
-                                  item.current
-                                    ? "text-purple-900"
-                                    : "text-gray-400 group-hover:text-purple-600"
-                                }`}
-                                aria-hidden="true"
-                              />
-                              {item.name}
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-6 w-6 ml-1"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M19 9l-7 7-7-7"
-                                />
-                              </svg>
-                            </button>
-                            <div className="absolute z-10 hidden group-hover:block bg-white py-2 mt-1 rounded-md shadow-lg">
-                              <Link
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              >
-                                Dropdown Item 1
-                              </Link>
-                              <Link
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              >
-                                Dropdown Item 2
-                              </Link>
-                              <Link
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              >
-                                Dropdown Item 3
-                              </Link>
-                            </div>
-                          </div>
+                          <AccordionItem
+                            item={item}
+                            handleNavigationClick={() =>
+                              handleNavigationClick(index)
+                            }
+                          />
                         ) : (
+                          // <div className="group inline-block">
+                          //   <button
+                          //     className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold ${
+                          //       item.current
+                          //         ? "bg-gray-50 text-purple-900"
+                          //         : "text-gray-700 hover:text-purple-600 hover:bg-gray-50"
+                          //     }`}
+                          //   >
+                          //     <item.icon
+                          //       className={`h-6 w-6 shrink-0 ${
+                          //         item.current
+                          //           ? "text-purple-900"
+                          //           : "text-gray-400 group-hover:text-purple-600"
+                          //       }`}
+                          //       aria-hidden="true"
+                          //     />
+                          //     {item.name}
+                          //     <svg
+                          //       xmlns="http://www.w3.org/2000/svg"
+                          //       className="h-6 w-6 ml-1"
+                          //       fill="none"
+                          //       viewBox="0 0 24 24"
+                          //       stroke="currentColor"
+                          //     >
+                          //       <path
+                          //         strokeLinecap="round"
+                          //         strokeLinejoin="round"
+                          //         strokeWidth={2}
+                          //         d="M19 9l-7 7-7-7"
+                          //       />
+                          //     </svg>
+                          //   </button>
+                          //   <div className="absolute z-10 hidden group-hover:block bg-white py-2 mt-1 rounded-md shadow-lg">
+                          //     <Link
+                          //       href="#"
+                          //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          //     >
+                          //       Dropdown Item 1
+                          //     </Link>
+                          //     <Link
+                          //       href="#"
+                          //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          //     >
+                          //       Dropdown Item 2
+                          //     </Link>
+                          //     <Link
+                          //       href="#"
+                          //       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          //     >
+                          //       Dropdown Item 3
+                          //     </Link>
+                          //   </div>
+                          // </div>
                           <Link
                             href={item.href}
                             onClick={() => handleNavigationClick(index)}
